@@ -7,7 +7,7 @@ uniform float uTime;
 
 const int MAX_STEP = 60;
 const float MIN_DIST = 0.0001;
-const float MAX_DIST = 50.0;
+const float MAX_DIST = 30.0;
 const float PI = acos(-1.0);
 const float TAU = PI * 2.0;
 
@@ -57,6 +57,7 @@ float rayMarch(vec3 ro, vec3 rd) {
     d = max(abs(d), 0.01);
     accum += exp(-d * 10.0); 
     total += d * 0.9;
+    if (MAX_DIST < total) break;
   }
   return accum;
 }

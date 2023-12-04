@@ -22,7 +22,8 @@ export class Canvas {
   private createRenderer(canvas: HTMLCanvasElement) {
     const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true })
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setPixelRatio(window.devicePixelRatio)
+    // renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setPixelRatio(1)
     return renderer
   }
 
